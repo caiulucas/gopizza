@@ -11,10 +11,12 @@ module.exports = function (api) {
           alias: {
             '@assets': './src/assets',
             '@components': './src/components',
+            '@routes': './src/routes',
             '@screens': './src/screens',
           },
         },
+        'react-native-reanimated/plugin',
       ],
-    ]
+    ],
   };
 };
