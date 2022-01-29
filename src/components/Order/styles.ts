@@ -27,12 +27,6 @@ export const Container = styled.View`
   padding: 24px 0;
 `;
 
-export const PizzaImage = styled.Image`
-  height: 104px;
-  width: 104px;
-  border-radius: 52px;
-`;
-
 export const Title = styled.Text`
   margin-top: 20px;
   font-size: ${RFValue(20)}px;

@@ -6,13 +6,6 @@ export const Container = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const PizzaImage = styled.Image`
-  height: 104px;
-  width: 104px;
-  border-radius: 52px;
-  margin: 12px 0;
-`;
-
 export const Content = styled.View`
   flex: 1;
   justify-content: center;

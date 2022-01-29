@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Button } from '@components/Button';
 import { BackButton } from '@components/BackButton';
+import { Label } from '@components/Label';
+import { PizzaImage } from '@components/PizzaImage';
 
 import { useTheme } from 'styled-components';
+
 import {
   Container,
   Content,
@@ -11,8 +14,7 @@ import {
   Header,
   Input,
   InputContainer,
-  Label,
-  PizzaImage,
+  PizzaImageContainer,
   Title,
 } from './styles';
 
@@ -24,11 +26,12 @@ export const PizzaDetail: React.FC = () => {
       <Header colors={theme.COLORS.GRADIENT}>
         <BackButton />
 
-        <PizzaImage
-          source={{
-            uri: 'https://i.ibb.co/kS6dVkX/Adobe-Stock-227594488-1-1.png',
-          }}
-        />
+        <PizzaImageContainer>
+          <PizzaImage
+            height={240}
+            uri="https://i.ibb.co/kS6dVkX/Adobe-Stock-227594488-1-1.png"
+          />
+        </PizzaImageContainer>
       </Header>
 
       <Content>

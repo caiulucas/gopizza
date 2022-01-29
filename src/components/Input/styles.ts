@@ -3,6 +3,7 @@ import { ColorValue, TextInputProps } from 'react-native';
 import styled from 'styled-components/native';
 
 interface InputProps extends TextInputProps {
+  type?: 'primary' | 'secondary';
   last?: boolean;
 }
 
@@ -18,7 +19,10 @@ export const Container = styled.TextInput.attrs(({ theme }) => ({
 
   border-width: 1px;
   border-radius: 12px;
-  border-color: ${({ theme }) => theme.COLORS.PRIMARY_100};
+  border-color: ${({ theme, type }) =>
+    type === 'primary' ? theme.COLORS.BORDER : theme.COLORS.PRIMARY_100};
+  background-color: ${({ theme, type }) =>
+    type === 'primary' ? theme.COLORS.TITLE : 'transparent'};
 
-  margin-bottom: ${({ last }) => (last ? 0 : 20)}px;
+  margin-bottom: ${({ last }) => (last ? 0 : 16)}px;
 `;

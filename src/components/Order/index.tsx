@@ -1,13 +1,7 @@
 import React from 'react';
+import { PizzaImage } from '../PizzaImage';
 
-import {
-  Container,
-  PizzaImage,
-  Title,
-  Description,
-  Status,
-  StatusText,
-} from './styles';
+import { Container, Title, Description, Status, StatusText } from './styles';
 
 interface OrderProps {
   status: 'ready' | 'preparing' | 'delivered';
@@ -22,11 +16,7 @@ const statusText = {
 export const Order: React.FC<OrderProps> = ({ status }) => {
   return (
     <Container>
-      <PizzaImage
-        source={{
-          uri: 'https://i.ibb.co/kS6dVkX/Adobe-Stock-227594488-1-1.png',
-        }}
-      />
+      <PizzaImage uri="https://i.ibb.co/kS6dVkX/Adobe-Stock-227594488-1-1.png" />
 
       <Title>Margherita</Title>
       <Description>Mesa 01 • Qnt: 1</Description>

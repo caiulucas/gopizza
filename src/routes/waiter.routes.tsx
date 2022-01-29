@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Menu } from '@screens/waiter/Menu';
 import { PizzaDetail } from '@screens/waiter/PizzaDetail';
+import { PizzaRegister } from '@screens/admin/PizzaRegister';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ export const WaiterRoutes: React.FC = () => {
     >
       <Screen name="Menu" component={Menu} />
       <Screen name="PizzaDetail" component={PizzaDetail} />
+      <Screen name="PizzaRegister" component={PizzaRegister} />
     </Navigator>
   );
 };

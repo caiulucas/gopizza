@@ -19,6 +19,7 @@ export default {
     ALERT_50: '#F3EFE5',
 
     SHAPE: '#DCDCDC',
+    BORDER: '#D7D9E0',
     TITLE: '#FFF',
 
     GRADIENT: ['#B83341', '#E03F50'],

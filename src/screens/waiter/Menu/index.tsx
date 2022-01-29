@@ -27,7 +27,7 @@ export const Menu: React.FC = () => {
 
         <PizzaList>
           <PizzaCard onPress={() => navigate('PizzaDetail' as never)} />
-          <PizzaCard />
+          <PizzaCard onPress={() => navigate('PizzaRegister' as never)} />
         </PizzaList>
       </Content>
     </Container>

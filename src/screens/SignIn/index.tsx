@@ -1,12 +1,11 @@
-import React, { useCallback, useState } from 'react';
-import auth from '@react-native-firebase/auth';
+import React, { useState } from 'react';
 
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
 
 import PizzaImg from '@assets/pizzaSignIn.png';
 import { useTheme } from 'styled-components';
-import { Alert } from 'react-native';
+
 import { useAuth } from '@hooks/auth';
 import {
   Container,
@@ -33,12 +32,14 @@ export const SignIn: React.FC = () => {
         <Title>Login</Title>
 
         <Input
+          type="secondary"
           placeholder="E-mail"
           keyboardType="email-address"
           value={email}
           onChangeText={setEmail}
         />
         <Input
+          type="secondary"
           last
           placeholder="Senha"
           secureTextEntry

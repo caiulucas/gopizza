@@ -10,11 +10,7 @@ export const Header = styled(LinearGradient)`
   height: ${RFValue(180)}px;
 `;
 
-export const PizzaImage = styled.Image`
-  height: 240px;
-  width: 240px;
-  border-radius: 120px;
-
+export const PizzaImageContainer = styled.View`
   position: absolute;
   top: 84px;
   align-self: center;
@@ -40,12 +36,6 @@ export const Form = styled.View`
 
 export const InputContainer = styled.View`
   flex: 1;
-`;
-
-export const Label = styled.Text`
-  font-size: ${RFValue(14)}px;
-  font-family: ${({ theme }) => theme.FONTS.TEXT};
-  color: ${({ theme }) => theme.COLORS.SECONDARY_900};
 `;
 
 export const Input = styled.TextInput`
