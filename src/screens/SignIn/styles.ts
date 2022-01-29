@@ -21,6 +21,7 @@ export const Image = styled.Image`
 export const Title = styled.Text`
   font-size: ${RFValue(32)}px;
   font-family: ${({ theme }) => theme.FONTS.TITLE};
+  color: ${({ theme }) => theme.COLORS.TITLE};
 
   margin-top: 10px;
   margin-bottom: 24px;
@@ -37,4 +38,5 @@ export const ForgotPasswordTouchable = styled.TouchableOpacity``;
 export const ForgotPasswordText = styled.Text`
   font-size: ${RFValue(14)}px;
   font-family: ${({ theme }) => theme.FONTS.TEXT};
+  color: ${({ theme }) => theme.COLORS.TITLE};
 `;

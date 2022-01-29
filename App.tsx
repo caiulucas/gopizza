@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components/native';
 import { StatusBar } from 'react-native';
 
 import { Routes } from '@routes/index';
+import { AuthProvider } from '@hooks/auth';
 import themes from './src/themes';
 
 export default function App() {
@@ -20,8 +21,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={themes}>
-      <StatusBar translucent backgroundColor="transparent" />
-      <Routes />
+      <AuthProvider>
+        <StatusBar translucent backgroundColor="transparent" />
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

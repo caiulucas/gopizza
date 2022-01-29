@@ -6,6 +6,7 @@ import EmojiSvg from '@assets/emoji.svg';
 import LogoutSvg from '@assets/logout.svg';
 import SearchSvg from '@assets/search.svg';
 
+import { useAuth } from '@hooks/auth';
 import {
   Container,
   Content,
@@ -19,6 +20,7 @@ import {
 
 export const Header: React.FC = () => {
   const theme = useTheme();
+  const { signOut } = useAuth();
   return (
     <Container colors={theme.COLORS.GRADIENT}>
       <Content>
@@ -27,7 +29,7 @@ export const Header: React.FC = () => {
           <Title>Olá, Garçom</Title>
         </WelcomeContainer>
 
-        <LogoutButton>
+        <LogoutButton onPress={signOut}>
           <LogoutSvg height={RFValue(24)} />
         </LogoutButton>
       </Content>

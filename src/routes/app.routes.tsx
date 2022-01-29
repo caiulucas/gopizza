@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from 'styled-components';
 import { RFValue } from 'react-native-responsive-fontsize';
 
-import { Menu } from '@screens/waiter/Menu';
 import { OrderList } from '@screens/waiter/OrderList';
+import { WaiterRoutes } from './waiter.routes';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -29,7 +29,7 @@ export const AppRoutes: React.FC = () => {
         },
       }}
     >
-      <Screen name="Cardápio" component={Menu} />
+      <Screen name="Cardápio" component={WaiterRoutes} />
       <Screen name="Pedidos" component={OrderList} />
     </Navigator>
   );

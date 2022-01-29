@@ -3,6 +3,7 @@ import React from 'react';
 import PathSvg from '@assets/path.svg';
 
 import { RFValue } from 'react-native-responsive-fontsize';
+import { TouchableOpacityProps } from 'react-native';
 import {
   Container,
   PizzaImage,
@@ -12,9 +13,11 @@ import {
   Description,
 } from './styles';
 
-export const PizzaCard: React.FC = () => {
+type PizzaCardProps = TouchableOpacityProps;
+
+export const PizzaCard: React.FC<PizzaCardProps> = ({ ...rest }) => {
   return (
-    <Container>
+    <Container {...rest}>
       <PizzaImage
         source={{
           uri: 'https://i.ibb.co/kS6dVkX/Adobe-Stock-227594488-1-1.png',

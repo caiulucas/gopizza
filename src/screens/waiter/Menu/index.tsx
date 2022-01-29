@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '@components/Header';
 import { PizzaCard } from '@components/PizzaCard';
 
+import { useNavigation } from '@react-navigation/native';
 import {
   Container,
   Content,
@@ -12,6 +13,8 @@ import {
 } from './styles';
 
 export const Menu: React.FC = () => {
+  const { navigate } = useNavigation();
+
   return (
     <Container>
       <Header />
@@ -23,7 +26,7 @@ export const Menu: React.FC = () => {
         </MenuInfo>
 
         <PizzaList>
-          <PizzaCard />
+          <PizzaCard onPress={() => navigate('PizzaDetail' as never)} />
           <PizzaCard />
         </PizzaList>
       </Content>
