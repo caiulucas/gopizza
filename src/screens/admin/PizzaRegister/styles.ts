@@ -4,7 +4,7 @@ import { StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 
-export const Container = styled.View``;
+export const Container = styled.ScrollView``;
 
 export const Header = styled(LinearGradient)`
   padding-top: ${Number(StatusBar.currentHeight) + 25}px;
@@ -34,6 +34,14 @@ export const DeleteButtonText = styled.Text`
 
 export const Content = styled.View`
   padding: 0 24px;
+`;
+
+export const ImageUploadContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 32px 22px;
 `;
 
 export const LabelContainer = styled.View`

@@ -50,7 +50,7 @@ export const PizzaDetail: React.FC = () => {
         <Label style={{ textAlign: 'right', marginBottom: 24 }}>
           Total: R$ 10,00
         </Label>
-        <Button title="Confirmar Pedido" color={theme.COLORS.SUCCESS_900} />
+        <Button title="Confirmar Pedido" type="secondary" />
       </Content>
     </Container>
   );

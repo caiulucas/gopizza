@@ -7,21 +7,24 @@ import { ButtonText, Container } from './styles';
 
 interface ButtonProps extends RectButtonProps {
   title: string;
+  width?: number | undefined;
   loading?: boolean;
-  color?: string;
+
+  type?: 'primary' | 'secondary';
 }
 
 export const Button: React.FC<ButtonProps> = ({
   title,
   loading,
-  color,
+  type,
+  width,
   ...rest
 }) => {
   const theme = useTheme();
   return (
-    <Container color={color} enabled={!loading} {...rest}>
+    <Container width={width} type={type} enabled={!loading} {...rest}>
       {loading ? (
-        <ActivityIndicator color={theme.COLORS.PRIMARY_50} />
+        <ActivityIndicator color={theme.COLORS.TITLE} />
       ) : (
         <ButtonText>{title}</ButtonText>
       )}
@@ -31,5 +34,6 @@ export const Button: React.FC<ButtonProps> = ({
 
 Button.defaultProps = {
   loading: false,
-  color: 'default',
+  width: undefined,
+  type: 'primary',
 };
