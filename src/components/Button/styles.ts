@@ -20,6 +20,6 @@ export const Container = styled(RectButton)<ContainerProps>`
 
 export const ButtonText = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.BUTTON};
-  font-size: ${RFValue(14)}px
+  font-size: ${RFValue(14)}px;
   color: ${({ theme }) => theme.COLORS.TITLE};
 `;

@@ -1,5 +1,5 @@
-import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
@@ -32,4 +32,6 @@ export const PizzaCounter = styled.Text`
   color: ${({ theme }) => theme.COLORS.SECONDARY_900};
 `;
 
-export const PizzaList = styled.ScrollView``;
+export const NewPizzaButtonArea = styled.View`
+  margin: 8px 24px;
+`;

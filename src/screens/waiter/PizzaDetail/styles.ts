@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { RFValue } from 'react-native-responsive-fontsize';
 
-export const Container = styled.View``;
+export const Container = styled.KeyboardAvoidingView``;
 
 export const Header = styled(LinearGradient)`
   padding: ${Number(StatusBar.currentHeight) + RFValue(25)}px 24px 0;
@@ -18,7 +18,7 @@ export const PizzaImageContainer = styled.View`
 
 export const Content = styled.View`
   padding: 0 24px;
-  margin-top: 144px;
+  margin: 144px 0 18px;
 `;
 
 export const Title = styled.Text`
@@ -26,6 +26,13 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.TITLE};
   color: ${({ theme }) => theme.COLORS.SECONDARY_900};
   text-align: center;
+  margin-bottom: 46px;
+`;
+
+export const Sizes = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 16px;
 `;
 
 export const Form = styled.View`

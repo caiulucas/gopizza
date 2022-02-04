@@ -5,8 +5,10 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import EmojiSvg from '@assets/emoji.svg';
 import LogoutSvg from '@assets/logout.svg';
 import SearchSvg from '@assets/search.svg';
+import CloseSvg from '@assets/close.svg';
 
 import { useAuth } from '@hooks/auth';
+import { TextInputProps } from 'react-native';
 import {
   Container,
   Content,
@@ -14,13 +16,25 @@ import {
   Title,
   LogoutButton,
   SearchContainer,
+  InputArea,
   Input,
+  ClearButton,
   SearchButton,
 } from './styles';
 
-export const Header: React.FC = () => {
+interface SearchHeaderProps extends TextInputProps {
+  onSearch: () => void;
+  onClear: () => void;
+}
+
+export const SearchHeader: React.FC<SearchHeaderProps> = ({
+  onSearch,
+  onClear,
+  ...rest
+}) => {
   const theme = useTheme();
   const { signOut } = useAuth();
+
   return (
     <Container colors={theme.COLORS.GRADIENT}>
       <Content>
@@ -35,8 +49,13 @@ export const Header: React.FC = () => {
       </Content>
 
       <SearchContainer>
-        <Input placeholder="Pesquise uma pizza" />
-        <SearchButton>
+        <InputArea>
+          <Input placeholder="Pesquise uma pizza" {...rest} />
+          <ClearButton onPress={onClear}>
+            <CloseSvg color={theme.COLORS.SECONDARY_900} height={16} />
+          </ClearButton>
+        </InputArea>
+        <SearchButton onPress={onSearch}>
           <SearchSvg height={RFValue(24)} />
         </SearchButton>
       </SearchContainer>

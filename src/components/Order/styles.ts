@@ -1,3 +1,4 @@
+import { RectButton } from 'react-native-gesture-handler';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
 
@@ -20,10 +21,11 @@ const statusCss = {
   `,
 };
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity<{ index: number }>`
+  flex: 0.5;
   align-items: center;
-  border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) => theme.COLORS.SHAPE};
+  border-right-width: ${({ index }) => (index % 2 === 0 ? 1 : 0)}px;
+  border-right-color: ${({ theme }) => theme.COLORS.SHAPE};
   padding: 24px 0;
 `;
 

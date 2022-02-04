@@ -38,13 +38,22 @@ export const SearchContainer = styled.View`
   top: 24px;
 `;
 
+export const InputArea = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  background-color: ${({ theme }) => theme.COLORS.TITLE};
+  border-radius: 16px;
+`;
+
 export const Input = styled.TextInput`
   flex: 1;
   height: 48px;
   padding: 0 16px;
-  background-color: ${({ theme }) => theme.COLORS.TITLE};
+`;
 
-  border-radius: 16px;
+export const ClearButton = styled.TouchableOpacity`
+  margin-right: 6px;
 `;
 
 export const SearchButton = styled(RectButton)`

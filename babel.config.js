@@ -14,6 +14,7 @@ module.exports = function (api) {
             '@hooks': './src/hooks',
             '@routes': './src/routes',
             '@screens': './src/screens',
+            '@utils': './src/utils',
           },
         },
         'react-native-reanimated/plugin',

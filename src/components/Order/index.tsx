@@ -1,10 +1,21 @@
 import React from 'react';
+import { TouchableOpacityProps } from 'react-native';
 import { PizzaImage } from '../PizzaImage';
 
 import { Container, Title, Description, Status, StatusText } from './styles';
 
-interface OrderProps {
+export type OrderResponse = {
+  id: string;
   status: 'ready' | 'preparing' | 'delivered';
+  pizza: string;
+  image: string;
+  table: number;
+  quantity: number;
+};
+
+interface OrderProps extends TouchableOpacityProps {
+  index: number;
+  order: OrderResponse;
 }
 
 const statusText = {
@@ -13,15 +24,19 @@ const statusText = {
   delivered: 'Entregue',
 };
 
-export const Order: React.FC<OrderProps> = ({ status }) => {
+export const Order: React.FC<OrderProps> = ({ order, index, ...rest }) => {
   return (
-    <Container>
-      <PizzaImage uri="https://i.ibb.co/kS6dVkX/Adobe-Stock-227594488-1-1.png" />
+    <Container index={index} {...rest} disabled={order.status === 'delivered'}>
+      <PizzaImage uri={order.image} />
 
-      <Title>Margherita</Title>
-      <Description>Mesa 01 • Qnt: 1</Description>
-      <Status status={status}>
-        <StatusText status={status}>{statusText[status]}</StatusText>
+      <Title>{order.pizza}</Title>
+      <Description>
+        Mesa {order.table} • Qnt: {order.quantity}
+      </Description>
+      <Status status={order.status}>
+        <StatusText status={order.status}>
+          {statusText[order.status]}
+        </StatusText>
       </Status>
     </Container>
   );

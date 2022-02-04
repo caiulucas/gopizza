@@ -32,6 +32,10 @@
     ],
     "camelcase": "off",
     "import/extensions": "off",
+    "react/no-unstable-nested-components": [
+      "error", {
+      "allowAsProps": true
+    }],
     "import/prefer-default-export": "off",
     "import/no-unresolved": "error",
     "react/function-component-definition": "off",

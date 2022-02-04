@@ -38,7 +38,7 @@ export const Content = styled.View`
 
 export const ImageUploadContainer = styled.View`
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   margin: 32px 22px;
